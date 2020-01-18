@@ -10,11 +10,15 @@ import java.util.List;
 
 public class Encryption {
 	
-	//core function
-	public static String encryption(String input) {
+	/**
+	 * core function
+	 * @param s a string to encrypt
+	 * @return the encoded message on one line as described
+	 */
+	public static String encryption(String s) {
 		//remove all the spaces in the string
-		input = input.replace(" ", "");
-		int length = input.length();
+		s = s.replace(" ", "");
+		int length = s.length();
 		//corner case
 		if (length == 0) return new String("");
 		
@@ -35,7 +39,7 @@ public class Encryption {
 			tmp = new StringBuilder();
 			for (int cur : rowindex) {
 				if (cur + i < length) {
-					tmp.append(input.charAt(cur + i));
+					tmp.append(s.charAt(cur + i));
 				}
 			}
 			res.append(tmp + " ");
